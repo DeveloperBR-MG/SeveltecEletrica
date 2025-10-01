@@ -216,6 +216,40 @@ img{width: 90px;height: 90px}
             </div>
           </div>
 
+        <section id="agendamento">
+        <h2>Agendamento de Visitas</h2>
+        <div class="card" style="max-width:600px;margin-top:12px">
+          <form action="https://formspree.io/f/xwprprqv" method="POST">
+            <label for="a-nome">Nome</label>
+            <input type="text" id="a-nome" name="nome" placeholder="Seu nome" required>
+
+            <label for="a-telefone">Telefone</label>
+            <input type="tel" id="a-telefone" name="telefone" placeholder="(00) 90000-0000" required>
+
+            <label for="a-servico">Serviço desejado</label>
+            <select id="a-servico" name="servico">
+              <option>Manutenção de quadro elétrico</option>
+              <option>Instalação residencial</option>
+              <option>Laudo e inspeção</option>
+              <option>Projetos elétricos</option>
+              <option>Outro</option>
+            </select>
+
+            <label for="a-data">Data da visita</label>
+            <input type="date" id="a-data" name="data" required>
+
+            <label for="a-horario">Horário preferencial</label>
+            <input type="time" id="a-horario" name="horario" required>
+
+            <label for="a-mensagem">Observações</label>
+            <textarea id="a-mensagem" name="mensagem" rows="3" placeholder="Ex: disponível somente pela manhã"></textarea>
+
+            <button class="btn" type="submit" style="margin-top:12px">Agendar Visita</button>
+          </form>
+        </div>
+      </section>
+
+
           <div class="card">
 <form action="https://formspree.io/f/xwprprqv" method="POST">
 <label for="c-nome">Nome</label>
