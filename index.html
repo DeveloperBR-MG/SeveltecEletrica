@@ -1,282 +1,110 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Seveltec Elétrica  — Manutenção de Quadros e Residencial</title>
-  <meta name="description" content="Instalações e manutenção elétrica residencial, comercial e de quadros elétricos. Projetos, reparos, laudos e suporte 24h." />
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviços de Eletricista</title>
   <style>
-    :root{
-      --bg:#0f1724; --card:#0b1220; --accent:#06b6d4; --accent-2:#06d68f; --muted:#94a3b8; --glass: rgba(255,255,255,0.04);
-      --max-width:1100px; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background: #f3f3f3;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071427 0%, #071b27 60%);color:#e6eef6}
-    .container{max-width:var(--max-width);margin:0 auto;padding:28px}
-    
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:12px}
-.logo {
-  width: 100px;
-  height: 100px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #ffffff, #f0f7fa);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  color: #2d2d2d;
-}   
-img{width: 90px;height: 90px}
-
-    nav a{color:var(--muted);text-decoration:none;margin-left:18px}
-    nav a:hover{color:#fff}
-
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin:36px 0}
-    .hero h1{font-size:36px;margin:0 0 12px}
-    .hero p{margin:0 0 18px;color:var(--muted);line-height:1.6}
-    .cta{display:flex;gap:12px}
-    .btn{background:var(--accent);padding:12px 16px;border-radius:10px;color:#04202a;font-weight:600;border:none;cursor:pointer}
-    .btn.secondary{background:transparent;border:1px solid var(--glass);color:var(--muted)}
-
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
-
-    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}
-    .service{padding:18px;border-radius:10px;background:var(--card)}
-    .service h3{margin:8px 0 6px}
-    .service p{margin:0;color:var(--muted);font-size:14px}
-
-    .about{display:flex;gap:20px;align-items:center;margin:28px 0}
-    .about p{color:var(--muted);line-height:1.6}
-
-    footer{margin:48px 0 28px;color:var(--muted);font-size:14px}
-
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .contact-item{display:flex;align-items:center;gap:10px;padding:12px;border-radius:10px;background:var(--glass)}
-
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr;}
-      .services{grid-template-columns:1fr 1fr}
-      .contact-grid{grid-template-columns:1fr}
+    header {
+      background: #004AAD;
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
     }
-    @media (max-width:520px){
-      .services{grid-template-columns:1fr}
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
     }
-
-    /* small utilities */
-    .muted{color:var(--muted)}
-    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-weight:600}
-    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit}
-    label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
+    h2 {
+      text-align: center;
+      margin-top: 40px;
+      color: #004AAD;
+    }
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .galeria img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .contato {
+      background: white;
+      padding: 25px;
+      margin: 40px auto;
+      border-radius: 8px;
+      font-size: 18px;
+      line-height: 30px;
+    }
+    footer {
+      background: #004AAD;
+      color: white;
+      text-align: center;
+      padding: 18px;
+      margin-top: 40px;
+    }
+    .mapa {
+      margin: 40px 0;
+      width: 100%;
+      height: 350px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo"><img src="bitmap.png"> </div>
-        <div>
-          <div style="font-weight:700">Seveltec Elétrica</div>
-          <div style="font-size:13px;color:var(--muted)">Instalação • Manutenção • Laudos</div>
-        </div>
-      </div>
-      <nav class="muted">
-        <a href="#servicos">Serviços</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#contato">Contato</a>
-      </nav>
-    </header>
 
-    <main>
-      <section class="hero">
-        <div>
-          <span class="pill">Atendimento 24h</span>
-          <h1>Manutenção elétrica, quadros de distribuição e instalações residenciais</h1>
-          <p>Profissionais qualificados para consertos, upgrades de painéis, ajustes em instalações residenciais e comerciais, além de projetos elétricos e laudos técnicos. Segurança e garantia nos serviços.</p>
-          <div class="cta">
-            <button class="btn" onclick="location.href='#contato'">Peça um orçamento</button>
-            <button class="btn secondary" onclick="location.href='#servicos'">Ver serviços</button>
-          </div>
+<header>
+  <h1>Eletricista Profissional</h1>
+  <p>Instalações • Manutenções • Automação Residencial</p>
+</header>
 
-          <div style="margin-top:20px;display:flex;gap:14px">
-            <div class="card" style="display:flex;gap:12px;align-items:center">
-              <div style="font-weight:700">✅</div>
-              <div>
-                <div style="font-weight:700">Técnicos certificados</div>
-                <div class="muted" style="font-size:13px">NR-10 e treinamentos atualizados</div>
-              </div>
-            </div>
-            <div class="card" style="display:flex;gap:12px;align-items:center">
-              <div style="font-weight:700">🔧</div>
-              <div>
-                <div style="font-weight:700">Garantia</div>
-                <div class="muted" style="font-size:13px">Garantia de serviço — 90 dias</div>
-              </div>
-            </div>
-          </div>
-        </div>
+<div class="container">
 
-        <aside class="card">
-          <h3 style="margin-top:0">Orçamento rápido</h3>
-          <form onsubmit="event.preventDefault(); enviarOrcamento()">
-            <label for="nome">Nome</label>
-            <input id="nome" placeholder="Seu nome" required />
-            <label for="telefone">Telefone</label>
-            <input id="telefone" placeholder="(00) 90000-0000" required />
-            <label for="servico">Serviço</label>
-            <select id="servico">
-              <option>Manutenção de quadro elétrico</option>
-              <option>Instalação residencial</option>
-              <option>Laudo e inspeção</option>
-              <option>Projetos elétricos</option>
-            </select>
-            <div style="margin-top:12px;display:flex;gap:8px">
-              <button class="btn" type="submit">Enviar</button>
-              <button class="btn secondary" type="button" onclick="location.href='tel:+55997586415'">Ligar agora</button>
-            </div>
-          </form>
-        </aside>
-      </section>
+  <h2>Fotos dos Serviços</h2>
+  <div class="galeria">
+    <img src="foto1.jpg" alt="Serviço 1">
+    <img src="foto2.jpg" alt="Serviço 2">
+    <img src="foto3.jpg" alt="Serviço 3">
+    <img src="foto4.jpg" alt="Serviço 4">
+  </div>
 
-      <section id="servicos">
-        <h2>Serviços</h2>
-        <div class="services">
-          <div class="service card">
-            <h3>Manutenção de quadros elétricos</h3>
-            <p>Diagnóstico, correção de conexões, substituição de disjuntores, balanceamento de fases e melhoria de aterramento.</p>
-          </div>
-          <div class="service card">
-            <h3>Instalações residenciais</h3>
-            <p>Novas tomadas, pontos de iluminação, circuitos para ar-condicionado e eletrodomésticos, com proteção adequada.</p>
-          </div>
-          <div class="service card">
-            <h3>Laudos e inspeções</h3>
-            <p>Vistorias técnicas com emissão de laudo e relatório técnico (conforme necessidade de condomínio ou seguro).</p>
-          </div>
-          <div class="service card">
-            <h3>Projetos elétricos</h3>
-            <p>Dimensionamento de cargas, diagramas unifilares e especificação de materiais para obras e reformas.</p>
-          </div>
-          <div class="service card">
-            <h3>Reparos e emergência 24h</h3>
-            <p>Atendimento rápido para curtos, falta de energia local, e reparos elétricos urgentes.</p>
-          </div>
-          <div class="service card">
-            <h3>Aterramento e proteção</h3>
-            <p>Instalação e correção de sistema de aterramento e dispositivos de proteção contra surtos (DPS).</p>
-          </div>
-        </div>
-      </section>
+  <h2>Localização</h2>
+  <div class="mapa">
+    <!-- Troque o endereço dentro do mapa se desejar -->
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.7946585320514!2d-46.6483167!3d-23.5800249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c9d6b5bf0b%3A0x1c1f9d4d1aaa!2sEletricista!5e0!3m2!1spt-BR!2sbr!4v1234567890" 
+      width="100%" 
+      height="100%" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+  </div>
 
-      <section id="sobre" class="about">
-        <div style="flex:1">
-          <h2>Sobre nós</h2>
-          <p>Equipe com anos de experiência em instalações e manutenção elétrica. Trabalhamos com normas de segurança, garantindo procedimentos técnicos adequados e materiais de qualidade. Nosso objetivo é entregar um serviço seguro, limpo e de fácil manutenção para o cliente.</p>
-        </div>
-        <div style="width:320px">
-          <div class="card">
-            <strong>Áreas atendidas</strong>
-            <ul style="margin:8px 0 0 18px;color:var(--muted)">
-              <li>Residencial</li>
-              <li>Comercial</li>
-              <li>Condomínios</li>
-              <li>Indústria leve</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="contato">
-        <h2>Contato</h2>
-        <div class="contact-grid">
-          <div class="card">
-            <div class="contact-item">
-              <div>📞</div>
-              <div>
-                <div style="font-weight:700">Telefone</div>
-                <div class="muted">+55 (31)99072-8853</div>
-              </div>
-            </div>
-            <div style="height:10px"></div>
-            <div class="contact-item">
-              <div>✉️</div>
-              <div>
-                <div style="font-weight:700">E-mail</div>
-                <div class="muted">contato@seuemail.com</div>
-              </div>
-            </div>
-            <div style="height:10px"></div>
-            <div class="contact-item">
-              <div>📍</div>
-              <div>
-                <div style="font-weight:700">Atendimento em:</div>
-                <div class="muted">Itabira e Região</div>
-              </div>
-            </div>
-          </div>
-
-        <section id="agendamento">
-        <h2>Agendamento de Visitas</h2>
-        <div class="card" style="max-width:600px;margin-top:12px">
-          <form action="https://formspree.io/f/xwprprqv" method="POST">
-            <label for="a-nome">Nome</label>
-            <input type="text" id="a-nome" name="nome" placeholder="Seu nome" required>
-
-            <label for="a-telefone">Telefone</label>
-            <input type="tel" id="a-telefone" name="telefone" placeholder="(00) 90000-0000" required>
-
-            <label for="a-servico">Serviço desejado</label>
-            <select id="a-servico" name="servico">
-              <option>Manutenção de quadro elétrico</option>
-              <option>Instalação residencial</option>
-              <option>Laudo e inspeção</option>
-              <option>Projetos elétricos</option>
-              <option>Outro</option>
-            </select>
-
-            <label for="a-data">Data da visita</label>
-            <input type="date" id="a-data" name="data" required>
-
-            <label for="a-horario">Horário preferencial</label>
-            <input type="time" id="a-horario" name="horario" required>
-
-            <label for="a-mensagem">Observações</label>
-            <textarea id="a-mensagem" name="mensagem" rows="3" placeholder="Ex: disponível somente pela manhã"></textarea>
-
-            <button class="btn" type="submit" style="margin-top:12px">Agendar Visita</button>
-          </form>
-        </div>
-      </section>
-
-
-          <div class="card">
-<form action="https://formspree.io/f/xwprprqv" method="POST">
-<label for="c-nome">Nome</label>
-  <input type="text" name="nome" placeholder="Seu nome" required>
-  <label for="c-nome">Telefone</label>
-  <input type="tel" name="telefone" placeholder="Telefone" required>
-  <select name="servico">
-    <option>Manutenção de quadros</option>
-    <option>Serviços residenciais</option>
-  </select>
-  <button class="btn" type="submit">Enviar Orçamento</button>
-</form>
+  <h2>Contato</h2>
+  <div class="contato">
+    📱 WhatsApp: <b>(00) 9 9999-9999</b><br>
+    ☎️ Telefone: <b>(00) 3333-3333</b><br>
+    ✉️ Email: <b>eletricista@empresa.com</b><br>
+    🕐 Atendimento 24h
+  </div>
 
 </div>
-</div>
-</section>
-
 
 <footer>
-© <span id="ano"></span>Seveltec Elétrica  Serviços Elétricos — Todos os direitos reservados • <span class="muted">Atendimento com técnico certificado</span>
+  © 2025 • Eletricista Profissional — Todos os direitos reservados
 </footer>
-</main>
-</div>
 
-
-<script>
-document.getElementById('ano').textContent = new Date().getFullYear();
-</script>
 </body>
 </html>
