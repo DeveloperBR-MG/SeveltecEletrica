@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agendamento de Serviços - Eletricista</title>
+
+<style>
+    body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 20px; }
+    h2 { text-align: center; }
+    .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px; }
+    label { font-weight: bold; margin-top: 10px; display: block; }
+    input, select, textarea { width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; }
+    button {
+        width: 100%; margin-top: 15px; padding: 15px;
+        background: #28a745; color: white; border: none;
+        border-radius: 8px; cursor: pointer; font-size: 18px;
+    }
+    button:hover { background: #1e7e34; }
+</style>
+</head>
+
+<body>
+<h2>Agendamento de Serviços - Eletricista</h2>
+
+<div class="container">
+    <label>Nome completo</label>
+    <input type="text" id="nome">
+
+    <label>Telefone</label>
+    <input type="text" id="telefone">
+
+    <label>Endereço do serviço</label>
+    <input type="text" id="endereco">
+
+    <label>Serviço desejado</label>
+    <input type="text" id="servico">
+
+    <label>Observação (opcional)</label>
+    <textarea id="obs"></textarea>
+
+    <label>Selecione a data</label>
+    <input type="date" id="data" min="">
+
+    <label>Selecione o horário</label>
+    <select id="hora">
+        <option value="">-- Escolher horário --</option>
+        <option>08:00</option>
+        <option>10:00</option>
+        <option>14:00</option>
+        <option>16:00</option>
+        <option>18:00</option>
+    </select>
+
+    <button onclick="enviarWhatsApp()">Enviar Agendamento via WhatsApp</button>
+</div>
+
+<script>
+    // Bloquear datas anteriores e finais de semana
+    const dataInput = document.getElementById("data");
+    const hoje = new Date().toISOString().split("T")[0];
+    dataInput.min = hoje;
+
+    dataInput.addEventListener("change", function () {
+        const d = new Date(this.value);
+        const dia = d.getDay(); // 0 = domingo, 6 = sábado
+
+        if (dia === 0 || dia === 6) {
+            alert("Atendemos apenas de Segunda a Sexta.");
+            this.value = "";
+        }
+    });
+
+    function enviarWhatsApp() {
+        let nome = document.getElementById("nome").value;
+        let telefone = document.getElementById("telefone").value;
+        let endereco = document.getElementById("endereco").value;
+        let servico = document.getElementById("servico").value;
+        let obs = document.getElementById("obs").value;
+        let data = document.getElementById("data").value;
+        let hora = document.getElementById("hora").value;
+
+        if (!nome || !telefone || !endereco || !servico || !data || !hora) {
+            alert("Preencha todos os campos obrigatórios.");
+            return;
+        }
+
+        let mensagem =
+            `📌 *Novo Agendamento de Serviço*\n\n` +
+            `👤 Nome: ${nome}\n` +
+            `📞 Telefone: ${telefone}\n` +
+            `📍 Endereço: ${endereco}\n` +
+            `🔧 Serviço desejado: ${servico}\n` +
+            (obs ? `📝 Observação: ${obs}\n` : "") +
+            `📅 Data: ${data.split("-").reverse().join("/")}\n` +
+            `⏰ Horário: ${hora}\n\n` +
+            `Aguardando confirmação.`;
+
+        let telefoneZap = "5531990728853"; // Seu WhatsApp
+
+        let url = `https://wa.me/${telefoneZap}?text=${encodeURIComponent(mensagem)}`;
+        window.open(url, "_blank");
+    }
+</script>
+
+</body>
+</html>
