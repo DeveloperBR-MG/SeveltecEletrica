@@ -9,9 +9,7 @@
       font-family: Arial, Helvetica, sans-serif;
       margin: 0;
       background: #f3f3f3;
-       user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
+       
     }
     header {
       background: #999999;
@@ -124,26 +122,6 @@
     }
   </style>
 </head>
-  <script>
-  // Bloquear botão direito
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-  });
-
-  // Bloquear teclas de atalho
-  document.addEventListener('keydown', function(e) {
-    // Ctrl + C, Ctrl + U, Ctrl + S, Ctrl + A
-    if (
-      (e.ctrlKey && e.key === 'c') ||
-      (e.ctrlKey && e.key === 'u') ||
-      (e.ctrlKey && e.key === 's') ||
-      (e.ctrlKey && e.key === 'a')
-    ) {
-      e.preventDefault();
-      return false;
-    }
-  });
-</script>
 
 <body>
 
