@@ -86,16 +86,16 @@
             return;
         }
 
-        let mensagem =
-            `📌 *Novo Agendamento de Serviço*\n\n` +
-            `👤 Nome: ${nome}\n` +
-            `📞 Telefone: ${telefone}\n` +
-            `📍 Endereço: ${endereco}\n` +
-            `🔧 Serviço desejado: ${servico}\n` +
-            (obs ? `📝 Observação: ${obs}\n` : "") +
-            `📅 Data: ${data.split("-").reverse().join("/")}\n` +
-            `⏰ Horário: ${hora}\n\n` +
-            `Aguardando confirmação.`;
+       let mensagem =
+    "\uD83D\uDCCC *Novo Agendamento de Serviço*\n\n" +
+    "\uD83D\uDC64 Nome: " + nome + "\n" +
+    "\uD83D\uDCF1 Telefone: " + telefone + "\n" +
+    "\uD83D\uDCCD Endereço: " + endereco + "\n" +
+    "\uD83D\uDD27 Serviço desejado: " + servico + "\n" +
+    (obs ? "\uD83D\uDCDD Observação: " + obs + "\n" : "") +
+    "\uD83D\uDCC5 Data: " + data.split("-").reverse().join("/") + "\n" +
+    "\u23F0 Horário: " + hora + "\n\n" +
+    "Aguardando confirmação.";
 
         let telefoneZap = "5531990728853"; // Seu WhatsApp
 
