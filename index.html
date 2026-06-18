@@ -5,169 +5,303 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Seveltec Elétrica</title>
   <style>
+    :root {
+      --bg: #070d1a;
+      --bg-alt: #12182f;
+      --orange: #ff6a25;
+      --orange-soft: rgba(255, 106, 37, 0.14);
+      --text: #f7f9ff;
+      --muted: #b8c2df;
+      --surface: rgba(255,255,255,0.07);
+      --surface-strong: rgba(255,255,255,0.12);
+      --border: rgba(255,255,255,0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
       margin: 0;
-      background: #070d1a;background: linear-gradient(90deg, rgb(9, 20, 34) 0%, rgb(16, 21, 39) 50%, rgb(33, 39, 51) 100%); 
-      color:#fff;
+      background: linear-gradient(180deg, #070d1a 0%, #10172d 50%, #121a31 100%);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
     }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
     header {
-      background: #080916;
-      background: linear-gradient(90deg, rgb(8, 9, 20) 0%, rgb(5, 5, 14) 50%, rgb(10, 11, 22) 100%);
-      color: rgb(255, 255, 255);
+      padding: 34px 18px 40px;
       text-align: center;
-      padding: 25px 10px;
+      background: linear-gradient(135deg, #0d1530 0%, #121c36 100%);
+      border-bottom: 5px solid var(--orange);
     }
+
     .logo {
       display: block;
-      margin: 0 auto 10px auto;
-      height: 120px;
+      margin: 0 auto 16px;
+      height: 110px;
       width: auto;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 10px;
+      background: rgba(255,255,255,0.04);
     }
+
+    h1 {
+      margin: 0 auto 16px;
+      max-width: 860px;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      line-height: 1.02;
+    }
+
+    header p {
+      margin: 0 auto;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 26px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff7e39, #ff581b);
+      color: #fff;
+      font-weight: 700;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 36px rgba(255, 106, 37, 0.24);
+    }
+
     .container {
-      width: 90%;
-      max-width: 1000px;
-      margin: auto;
+      width: min(94%, 1120px);
+      margin: 0 auto;
+      padding-bottom: 36px;
     }
-    h2 {
-      text-align: center;
-      margin-top: 40px;
-      color: #f8f8f8;
+
+    .section {
+      margin-top: 36px;
     }
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
-    }
-    .galeria img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      transition: transform 0.4s ease;
-      cursor: pointer;
-    }
-    .galeria img:hover {
-      transform: scale(1.5);
-    }
-    .contato {
-      background: rgb(4, 9, 26);
-      padding: 25px;
-      margin: 40px auto;
-      border-radius: 8px;
-      font-size: 18px;
-      line-height: 30px;
-    }
-    footer {
-      background: #131212;
-      color: white;
-      text-align: center;
-      padding: 18px;
-      margin-top: 40px;
-    }
-    .mapa {
-      margin: 40px 0;
-      width: 100%;
-      height: 350px;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    /* BOTÃO FLUTUANTE DO WHATSAPP */
-    .whatsapp-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      width: 65px;
-      height: 65px;
-      border-radius: 50%;
+
+    .section-header {
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
-      z-index: 9999;
-      transition: 0.2s;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
     }
-    .whatsapp-btn:hover {
-      transform: scale(1.1);
+
+    .section-header::before,
+    .section-header::after {
+      content: "";
+      flex: 1;
+      height: 2px;
+      min-width: 60px;
+      background: rgba(255,255,255,0.12);
     }
-    .whatsapp-btn img {
-      width: 38px;
-      height: 38px;
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(1.7rem, 2.4vw, 2.4rem);
+      color: #fff;
+      text-align: center;
     }
-    button {
-      background-color: #539196;
-      color: rgb(255, 255, 255);
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      border-radius: 5px;
+
+    .section-box {
+      padding: 28px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-box--orange {
+      background: linear-gradient(180deg, rgba(255,106,37,0.16), rgba(255,106,37,0.05));
+      border-color: rgba(255, 106, 37, 0.2);
+    }
+
+    .section-box--orange::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, rgba(255,106,37,0.95), rgba(255,163,80,0.9));
+    }
+
+    .section-text {
+      margin: 14px auto 0;
+      max-width: 760px;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.85;
+      font-size: 1rem;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .galeria img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.14);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
-      margin-top: 10px;
-      float: right;
-      transition: box-shadow 0.3s ease;
     }
-    button a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
+
+    .galeria img:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 24px 40px rgba(0, 0, 0, 0.18);
     }
-    button:hover {
-    box-shadow: 2px 2px 10px rgb(255, 255, 255);
-    } 
-  
-    button a:hover {
-      color: #80ff9f;
+
+    .mapa {
+      width: 100%;
+      min-height: 360px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 20px 36px rgba(0, 0, 0, 0.14);
+      margin-top: 26px;
+    }
+
+    .contato {
+      margin-top: 18px;
+      padding: 22px 18px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    .contato a,
+    .contato strong {
+      color: #fff;
+    }
+
+    footer {
+      margin-top: 24px;
+      padding: 18px 16px;
+      text-align: center;
+      background: #0f182b;
+      color: var(--muted);
+    }
+
+    .whatsapp-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 66px;
+      height: 66px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #25d366, #1ebf5d);
+      box-shadow: 0 22px 36px rgba(0,0,0,0.24);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      z-index: 999;
+    }
+
+    .whatsapp-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 42px rgba(0,0,0,0.3);
+    }
+
+    .whatsapp-btn img {
+      width: 36px;
+      height: 36px;
+    }
+
+    @media (max-width: 720px) {
+      .section-box {
+        padding: 22px;
+      }
+
+      .galeria img {
+        height: 200px;
+      }
     }
   </style>
 </head>
-
 <body>
-
 <header>
   <img src="bitmap.png" alt="Logo" class="logo">
-  <h1>Manutenções Eletricas</h1>
-  <p>Instalações • Manutenções • Automação Residencial</p>
-  <button ><a href="agendamento.html">Agendamento</a></button>
+  <h1>Manutenções Elétricas com confiança e velocidade</h1>
+  <p>Instalações, manutenções e automação residencial para Itabira e região.</p>
+  <a href="agendamento.html" class="btn-primary">Agendamento</a>
 </header>
-
-<div class="container">
-
-  <h2>Fotos dos Serviços</h2>
-  <div class="galeria">
-    <img src="imagem1.jpg" alt="Serviço 1">
-    <img src="imagem2.jpg" alt="Serviço 2">
-    <img src="imagem3.jpg" alt="Serviço 3">
-  </div>
-
-  <h2>Localização</h2>
-  <spam>Região de Itabira - Minas Gerais</spam>
-  <div class="mapa">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.766222252283!2d-43.23335022410215!3d-19.623565932138154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa5a28ec0d0fae7%3A0x8d6225b7cb680e36!2sItabira%20-%20MG!5e0!3m2!1spt-BR!2sbr!4v1700000000000" 
-      width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-    </iframe>
-  </div>
-
-  <h2>Contato</h2>
-  <div class="contato">
-    📱 WhatsApp: <b>(31) 99072-8853</b><br>
-    ☎️ Telefone: <b>(31) 99072-8853</b><br>
-    ✉️ Email: <b>/// /// //</b><br>
-    🕐 Atendimento 24h
-  </div>
-
-</div>
-
+<main class="container">
+  <section class="section section-orange">
+    <div class="section-header">
+      <h2 class="section-title">Nossos Serviços</h2>
+    </div>
+    <div class="section-box section-box--orange">
+      <p class="section-text">Soluções elétricas completas com acabamento profissional, segurança e atendimento rápido. Veja alguns trabalhos realizados pela Seveltec.</p>
+      <div class="galeria">
+        <img src="imagem1.jpg" alt="Serviço 1">
+        <img src="imagem2.jpg" alt="Serviço 2">
+        <img src="imagem3.jpg" alt="Serviço 3">
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">Localização</h2>
+    </div>
+    <div class="section-box">
+      <p class="section-text">Atendemos a região de Itabira - Minas Gerais com visitas técnicas rápidas, projetos elétricos e suporte de qualidade.</p>
+      <div class="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.766222252283!2d-43.23335022410215!3d-19.623565932138154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa5a28ec0d0fae7%3A0x8d6225b7cb680e36!2sItabira%20-%20MG!5e0!3m2!1spt-BR!2sbr!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+  <section class="section section-orange">
+    <div class="section-header">
+      <h2 class="section-title">Contato</h2>
+    </div>
+    <div class="section-box section-box--orange">
+      <p class="section-text">Entre em contato agora mesmo e garanta um atendimento elétrico rápido, seguro e personalizado.</p>
+      <div class="contato">
+        <p>📱 WhatsApp: <a href="https://wa.me/5531990728853" target="_blank" rel="noopener noreferrer"><strong>(31) 99072-8853</strong></a></p>
+        <p>☎️ Telefone: <strong>(31) 99072-8853</strong></p>
+        <p>✉️ Email: <strong>contato@seveltec.com.br</strong></p>
+        <p>🕐 Atendimento 24h</p>
+      </div>
+    </div>
+  </section>
+</main>
 <footer>
   © 2025 • Seveltec Elétrica — Todos os direitos reservados
 </footer>
-
-<!-- BOTÃO FLUTUANTE WhatsApp -->
-<a class="whatsapp-btn" href="https://wa.me/5531990728853" target="_blank">
-   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+<a class="whatsapp-btn" href="https://wa.me/5531990728853" target="_blank" rel="noopener noreferrer">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
 </a>
-
 </body>
 </html>
